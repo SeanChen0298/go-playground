@@ -17,31 +17,31 @@ func initList() *SinglyLinkedList {
 }
 
 func (s *SinglyLinkedList) ConstructLinkedList(nums []int) {
+	current := s.head
 	for _, val := range nums {
-		node := &ListNode{}
-		node.Val = val
+		node := &ListNode{Val: val, Next: nil}
 		if s.head == nil {
 			s.head = node
+			current = s.head
 		} else {
-			node.Next = s.head
-			s.head = node
+			current.Next = node
+			current = current.Next
 		}
 		s.len++
 	}
 }
 
 func (s *SinglyLinkedList) Display() {
-	var result []int
 	current := s.head
 	for current.Next != nil {
-		result = append(result, current.Val)
+		fmt.Print(current.Val, " -> ")
 		current = current.Next
 	}
-	result = append(result, current.Val)
-	fmt.Println(result)
+	fmt.Print(current.Val)
 }
 
 func TestConstructLinkedList() {
+	fmt.Println("\nArray to LinkedList:")
 	nums := []int{1, 2, 3}
 	l1 := initList()
 	l1.ConstructLinkedList(nums)
