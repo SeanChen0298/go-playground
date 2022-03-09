@@ -40,6 +40,15 @@ func (s *SinglyLinkedList) Display() {
 	fmt.Print(current.Val)
 }
 
+func Display(head *ListNode) {
+	current := head
+	for current.Next != nil {
+		fmt.Print(current.Val, " -> ")
+		current = current.Next
+	}
+	fmt.Print(current.Val)
+}
+
 func TestConstructLinkedList() {
 	fmt.Println("\nArray to LinkedList:")
 	nums := []int{1, 2, 3}

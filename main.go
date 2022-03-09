@@ -32,4 +32,6 @@ func main() {
 	lrucache.TestLRUCache()
 
 	linkedlist.TestReverse()
+
+	linkedlist.TestMergeLinkedList()
 }
