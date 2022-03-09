@@ -4,10 +4,6 @@ import (
 	"fmt"
 )
 
-func DesignHashMap() {
-	fmt.Println("\nExercise for designing a hash map using linked list and array:")
-}
-
 const (
 	mod = 1024
 )
@@ -68,4 +64,19 @@ func (this *MyHashMap) Remove(key int) {
 		}
 	}
 	this.set[i] = head.next
+}
+
+func DesignHashMapTest() {
+	// 	["MyHashMap", "put", "put", "get", "get", "put", "get", "remove", "get"]
+	// 	[[], 		 [1, 1], [2, 2], [1],   [3],   [2, 3], [2],  [2], 	   [2]]
+	fmt.Println("\nDESIGN HASH MAP using linked list and array:")
+	obj := Constructor()
+	obj.Put(1, 1)
+	obj.Put(2, 2)
+	fmt.Println(obj.Get(1))
+	fmt.Println(obj.Get(3))
+	obj.Put(2, 3)
+	fmt.Println(obj.Get(2))
+	obj.Remove(2)
+	fmt.Println(obj.Get(2))
 }

@@ -2,8 +2,11 @@ package main
 
 import (
 	"fmt"
+	lrucache "go-playground/LRUCache"
+	array "go-playground/arrays"
 	article "go-playground/articles"
-	hashmap "go-playground/hashmap"
+	hashmap "go-playground/hashmaps"
+	linkedlist "go-playground/linkedlists"
 )
 
 func main() {
@@ -20,15 +23,12 @@ func main() {
 	// reference the variable by package_name.var_name
 	fmt.Println("Imported Article", article.Article)
 
-	hashmap.DesignHashMap()
-	obj := hashmap.Constructor()
-	obj.Put(1, 1)
-	obj.Put(2, 2)
-	fmt.Println(obj.Get(1))
-	fmt.Println(obj.Get(3))
-	obj.Put(2, 3)
-	fmt.Println(obj.Get(2))
-	obj.Remove(2)
-	fmt.Println(obj.Get(2))
+	hashmap.DesignHashMapTest()
+
+	array.TwoSumTest()
+
+	linkedlist.TestConstructLinkedList()
+
+	lrucache.TestLRUCache()
 
 }
